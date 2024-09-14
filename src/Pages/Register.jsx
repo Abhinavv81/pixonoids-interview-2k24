@@ -4,8 +4,9 @@ import toast from "react-hot-toast";
 import { useAuth } from "../Context/useAuthContext";
 import { db } from "../firebase";
 import { doc, setDoc, collection, addDoc } from "firebase/firestore";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [description, setDescription] = useState("");
@@ -62,6 +63,7 @@ const Register = () => {
         console.log(data);
         addData();
         toast.success("Registered Successfully");
+        navigate("/done");
       })
       .catch((error) => console.error(error));
   };
