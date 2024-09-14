@@ -1,15 +1,13 @@
 // src/App.js
 import React from "react";
-import { useAuth } from "./Context/useAuthContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import SignIn from "./Pages/SignIn";
 import Navbar from "./Components/Navbar";
 import Particles from "./Components/Particle";
 import Done from "./Pages/Done";
+import Footer from "./Components/Footer";
 function App() {
-  const { user, signIn, signOutUser } = useAuth(); // Access authentication state and functions
-
   return (
     <div className="App max-w-7xl mx-auto pt-4 p-3">
       <Navbar />
@@ -28,6 +26,7 @@ function App() {
           <Route path="/done" element={<Done />}></Route>
         </Routes>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }
