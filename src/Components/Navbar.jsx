@@ -10,10 +10,14 @@ const Navbar = () => {
 
   const openAboutus = () => {
     setAboutUsOpen(true);
+    setIsOpen(false);
+    setContactUsOpen(false); 
   };
 
   const openContactus = () => {
     setContactUsOpen(true);
+    setIsOpen(false);  
+    setAboutUsOpen(false);
   };
 
   const closePopup = () => {
@@ -43,15 +47,16 @@ const Navbar = () => {
           </span>
         </button>
       </div>
-      {isOpen ? (
-        <div className="text-black font-bold font-advent fixed rounded-xl flex flex-col gap-1  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#b1b1b1ce]  z-2 items-center justify-around p-2 scale-100 transition-all delay-700 ease-in-out h-[45vh] w-[45vw] ">
+      {isOpen ? ( 
+        <div className="text-black font-bold font-advent fixed rounded-xl flex flex-col gap-1  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#b1b1b1ce]  z-20  items-center justify-around p-2 scale-100 transition-all delay-700 ease-in-out h-[40vh] w-[60vw] ">
+          
           <button onClick={openAboutus}>
-            <span className="font-advent font-bold text-base md:text-2xl">
+            <span className="font-advent font-extrabold text-xl md:text-2xl">
               ABOUT US
             </span>
           </button>
           <button onClick={openContactus}>
-            <span className="font-advent font-bold text-base md:text-2xl">
+            <span className="font-advent font-extrabold text-xl md:text-2xl">
               CONTACT US{" "}
             </span>
           </button>

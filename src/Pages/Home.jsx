@@ -42,7 +42,7 @@ const Home = () => {
               Best of luck!
             </p>
             <Link to="/register">
-              <button className="btn my-4">Start your application</button>
+              <button className="btn my-4">START YOUR APPLICATION</button>
             </Link>
           </div>
         </div>

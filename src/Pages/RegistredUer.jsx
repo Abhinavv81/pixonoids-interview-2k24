@@ -20,13 +20,13 @@ const RegistredUer = () => {
               alt="whatsapp"
               className="w-8  inline-block"
             />
-            Join whatsapp group
+            JOIN WHATSAPP GROUP
           </button>
         </a>
         <Link to={"/"}>
           <button className=" mt-4 flex gap-2 mx-auto text-n-3">
             <MoveLeft />
-            Go back to home
+            GO BACK HOME
           </button>
         </Link>
 
@@ -41,19 +41,19 @@ const RegistredUer = () => {
           </div>
           <div className="flex  items-center lg:gap-60 mt-6 text-base\">
             <div className="flex flex-col gap-2">
-              <span>Rahul Prasad : 7807592676</span>
-              <span>Anurag Negi : 8219132773</span>
+              <span>RAHUL PRASAD : 7807592676</span>
+              <span>ANURAG NEGI : 8219132773</span>
             </div>
             <div className="flex flex-col gap-2">
-              <span>Vani Chauhan : 9990054291</span>
-              <span>Tanmay sharma : 8448608491</span>
+              <span>VANI CHAUHAN : 9990054291</span>
+              <span>TANMAY SHARMA : 8448608491</span>
             </div>
           </div>
         </div>
 
         <span className="mx-auto w-full mt-11 flex justify-center items-center">
           <button className="btn" onClick={signOutUser}>
-            Sign Out
+            SIGN OUT
           </button>
         </span>
       </div>
