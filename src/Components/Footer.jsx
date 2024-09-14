@@ -5,6 +5,7 @@ import {
   Linkedin,
   TwitterIcon,
   CopyrightIcon,
+  Youtube,
 } from "lucide-react";
 const Footer = () => {
   const socialLinks = [
@@ -28,6 +29,11 @@ const Footer = () => {
       link: "",
       icon: <TwitterIcon size={24} />,
     },
+    {
+      name: "Youtube",
+      link: "",
+      icon: <Youtube size={24} />,
+    },
   ];
   return (
     <div className=" py-4 text-center">
@@ -39,7 +45,7 @@ const Footer = () => {
         ))}
       </div>
       <p className="mt-2 flex items-center justify-center gap-2">
-        <CopyrightIcon size={14} /> 2024 Freshman Interviews
+        <CopyrightIcon size={14} /> 2024 Pixonoids
       </p>
     </div>
   );
