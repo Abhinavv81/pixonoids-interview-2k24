@@ -7,38 +7,38 @@ const Home = () => {
     {
       name: "Pre Production",
       description:
-        "The Pre-Production Department is responsible for the planning and preparation of the film before the actual production begins. It is the first stage in the production process.",
-      image: "https://dummyimage.com/720x400",
+        "Pre-Production Department is responsible for the planning and preparation of the film before the actual production begins. It is the first stage in the production process.",
+      image: "/g1.jpg",
     },
     {
       name: " Post Production",
       description:
         "Post-production is part of the process of filmmaking, video production, and photography. It occurs in the making of motion pictures, television programs, radio programs, advertising, audio recordings, photography, and digital art.",
-      image: "https://dummyimage.com/721x401",
+      image: "/afduRwzNNfw-HD.jpg",
     },
     {
       name: "Graphic design",
       description:
         "Graphic design is the process of visual communication and problem-solving through the use of typography, photography, iconography and illustration. The field is considered a subset of visual communication and communication design, but sometimes the term graphic design is used synonymously.",
-      image: "https://dummyimage.com/722x402",
+      image: "/412584793_1451421928779742_5813991315657365351_n.webp",
     },
     {
       name: "Web Development",
       description:
         "Web development is the work involved in developing a website for the Internet or an intranet. Web development can range from developing a simple single static page of plain text to complex web applications, electronic businesses, and social network services.",
-      image: "https://dummyimage.com/723x403",
+      image: "/hillfair.png",
     },
   ];
   return (
     <div>
-      <div className="w-full flex flex-col sm:flex-row justify-center items-center h-full min-h-[80vh]">
-        <div className="flex-1 text-center">
-          <div className="rounded-xl bg-[#B1B1B154] text-[#F8E5CF] py-11 h-full">
-            <h1 className="h1 w-full">FRESHMAN</h1>
-            <h2 className="h3">INTERVIEWS 2K24</h2>
-            <p>
-              Welcome! We're excited to have you here. We look <br />
-              forward to seeing you at the upcoming interviews. <br />
+      <div className="w-full flex flex-col sm:flex-row justify-center items-center h-full min-h-[80vh] mt-10">
+        <div className="flex-1 leading-relaxed text-center m-5 mt-10">
+          <div className="rounded-xl bg-[#B1B1B154] text-[#F8E5CF] py-6 lg:py-11 h-full">
+            <h1 className="text-4xl font-semibold  md:6xl lg:h1 w-full">FRESHMAN</h1>
+            <h2 className="text-xl  lg:h3">INTERVIEWS 2K24</h2>
+            <p className="text-[10px] px-5 mt-3 lg:text-xl">
+              Welcome! We're excited to have you here. We look 
+              forward to seeing you at the upcoming interviews. 
               Best of luck!
             </p>
             <Link to="/register">
@@ -50,7 +50,7 @@ const Home = () => {
           <img
             src={"/poster.jpeg"}
             alt={"Poster"}
-            className="max-h-[70vh] mx-auto"
+            className="max-h-[70vh] px-5"
           />
         </div>
       </div>
@@ -66,7 +66,7 @@ const Home = () => {
               <div class="xl:w-1/4 md:w-1/2 p-1">
                 <div class=" p-6 rounded-lg">
                   <img
-                    class="h-40 rounded w-full object-cover object-center mb-6"
+                    class="h-36 rounded w-full object-cover object-center mb-6"
                     src={d.image}
                     alt="content"
                   />

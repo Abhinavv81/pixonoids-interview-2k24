@@ -89,109 +89,108 @@ const Register = () => {
 
   // https://script.google.com/macros/s/AKfycbzq2-G27iFWZDsEykaZvX9yBahoEfmkPOVXswvppTEOy1DOBGuWQgrTnd2jQRb0MJkf/exec --> Google App Script URL for the form submission
   return (
-    <div className="min-h-[80vh] flex justify-center items-center font-sans flex-col">
-      <div className="max-w-xl ">
-        <h1>Register</h1>
+    <div className="min-h-[80vh] flex justify-center items-center font-sans flex-col mt-8">
+      <div className="max-w-xl justify-center ">
+        <div className="flex justify-center -ml-4 mb-3 text-2xl lg:text-5xl font-advent font-bold">
+          REGISTER
+        </div>
         <form>
-          <div className="flex gap-3">
-            <input
-              type="text"
-              className="form-input"
-              placeholder="First Name"
-              name="first-name"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
+          <div className="flex gap-4 flex-col text-[10px] lg:text-base">
+            <div className="flex gap-4">
+              <input
+                type="text"
+                className="form-input"
+                placeholder="First Name"
+                name="first-name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
 
-            <input
-              type="text"
-              className="form-input"
-              placeholder="Last Name"
-              name="last-name"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            />
+              <input
+                type="text"
+                className="form-input"
+                placeholder="Last Name"
+                name="last-name"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+            </div>
+            <div className="flex flex-col">
+              <textarea
+                name="description"
+                id="description"
+                placeholder="Describe yourself in few words"
+                className="form-input"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              ></textarea>
+              <input
+                type="email"
+                className="form-input"
+                placeholder="Email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                placeholder="Roll Number"
+                type="text"
+                className="form-input"
+                name="roll-number"
+                value={rollNumber}
+                onChange={(e) => setRollNumber(e.target.value)}
+              />
+              <input
+                name="branch"
+                placeholder="Branch"
+                type="text"
+                className="form-input"
+                value={branch}
+                onChange={(e) => setBranch(e.target.value)}
+              />
+              <input
+                name="mobile-number"
+                placeholder="Mobile Number"
+                type="text"
+                className="form-input"
+                value={mobileNumber}
+                onChange={(e) => setMobileNumber(e.target.value)}
+              />
+            </div>
+            <div className="w-full flex">
+              <input
+                name="link"
+                placeholder="Link to your Portfolio/CV"
+                type="text"
+                className="form-input"
+                value={link}
+                onChange={(e) => setLink(e.target.value)}
+              />
+            </div>{" "}
+            <div className="my-3 flex gap-4">
+              <label htmlFor="department"> Select the Department</label>
+              <select
+                name="department"
+                id="department"
+                className="flex-1"
+                value={department}
+                onChange={(e) => setDepartment(e.target.value)}
+              >
+                <option value="pre-production">Pre Production</option>
+                <option value="post-production">Post Production</option>
+                <option value="web-d">Web Development</option>
+                <option value="graphics">Graphic Design</option>
+              </select>
+            </div>
+            <span className="text-xs text-n-3">
+              If you are interested in multiple departments, select the one you
+              are most interested in and mention the others in the description.
+            </span>
           </div>
-          <div className="flex flex-col">
-            <textarea
-              name="description"
-              id="description"
-              placeholder="Describe yourself in few words"
-              className="form-input"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            ></textarea>
-            <input
-              type="email"
-              className="form-input"
-              placeholder="Email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              placeholder="Roll Number"
-              type="text"
-              className="form-input"
-              name="roll-number"
-              value={rollNumber}
-              onChange={(e) => setRollNumber(e.target.value)}
-            />
-            <input
-              name="branch"
-              placeholder="Branch"
-              type="text"
-              className="form-input"
-              value={branch}
-              onChange={(e) => setBranch(e.target.value)}
-            />
-            <input
-              name="mobile-number"
-              placeholder="Mobile Number"
-              type="text"
-              className="form-input"
-              value={mobileNumber}
-              onChange={(e) => setMobileNumber(e.target.value)}
-            />
-          </div>
-          <div className="w-full flex">
-            <input
-              name="link"
-              placeholder="Link to your Portfolio/CV"
-              type="text"
-              className="form-input"
-              value={link}
-              onChange={(e) => setLink(e.target.value)}
-            />
-          </div>{" "}
-          <div className="my-3 flex gap-4">
-            <label htmlFor="department"> Select the Department</label>
-            <select
-              name="department"
-              id="department"
-              className="flex-1"
-              value={department}
-              onChange={(e) => setDepartment(e.target.value)}
-            >
-              <option value="pre-production">Pre Production</option>
-              <option value="post-production">Post Production</option>
-              <option value="web-d">Web Development</option>
-              <option value="graphics">Graphic Design</option>
-            </select>
-          </div>
-          <span className="text-xs text-n-3">
-            If you are interested in multiple departments, select the one you
-            are most interested in and mention the others in the description.
-          </span>
-          <br />
-          <button
-            type="submit"
-            onClick={RegisterFormSubmit}
-            className="btn mt-6"
-          >
-            Register
-          </button>
         </form>
+        <button type="submit" onClick={RegisterFormSubmit} className="btn mt-6">
+          Register
+        </button>
       </div>
       <br />
       <div className="">

@@ -39,14 +39,23 @@ const SignIn = () => {
           <img
             src={"/poster.jpeg"}
             alt={"Poster"}
-            className="py-6 max-h-[70vh] mx-auto"
+            className="py-6 max-h-[70vh] md:mx-auto sm:px-5"
           />
-          <span>
-            For any questions, please reach out to: <br />• Rahul Prasad:
-            7807592676 <br />• Anurag Negi: 8219132773 <br />• Vani
-            Chauhan:9990054291 <br />
-            •Tanmay sharma :8448608491
-          </span>
+          <div className="w-100vw flex justify-center items-center  m-5 ml-9 flex-col gap-2">
+            <div className="flex justify-center items-center text-xl lg:text-2xl font-semibold">
+              FOR ANY QUERIES, PLEASE REACH OUT TO :
+            </div>
+            <div className="flex  items-center lg:gap-60 mt-6 text-base\">
+              <div className="flex flex-col gap-2">
+                <span>Rahul Prasad : 7807592676</span>
+                <span>Anurag Negi : 8219132773</span>
+              </div>
+              <div className="flex flex-col gap-2">
+                <span>Vani Chauhan : 9990054291</span>
+                <span>Tanmay sharma : 8448608491</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

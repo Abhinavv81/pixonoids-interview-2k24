@@ -9,8 +9,10 @@ import Done from "./Pages/Done";
 import Footer from "./Components/Footer";
 function App() {
   return (
-    <div className="App max-w-7xl mx-auto pt-4 p-3">
-      <Navbar />
+    <div className="App max-w-7xl mx-auto pt-4 p-3 ">
+      <div className="-ml-9">
+        <Navbar />
+      </div>
       <Particles
         className="fixed top-0 left-0 -z-10 h-full w-full"
         quantity={100}
