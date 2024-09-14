@@ -14,7 +14,6 @@ const Register = () => {
   const [mobileNumber, setMobileNumber] = useState("");
   const [link, setLink] = useState("");
   const [department, setDepartment] = useState("");
-  const [formData, setFormData] = useState({});
   const { user, signIn, signOutUser } = useAuth();
 
   const RegisterFormSubmit = (e) => {
@@ -48,8 +47,6 @@ const Register = () => {
       toast.error("Please fill all the fields");
       return;
     }
-    setFormData(data);
-    console.log(formData);
     fetch(
       "https://script.google.com/macros/s/AKfycbzq2-G27iFWZDsEykaZvX9yBahoEfmkPOVXswvppTEOy1DOBGuWQgrTnd2jQRb0MJkf/exec",
       {
@@ -57,40 +54,51 @@ const Register = () => {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: new URLSearchParams(formData),
+        body: new URLSearchParams({
+          firstName,
+          lastName,
+          description,
+          email,
+          rollNumber,
+          branch,
+          mobileNumber,
+          link,
+          department,
+          userEmail: user.email,
+        }),
       }
     )
       .then((response) => response.text())
       .then((data) => {
         console.log(data);
-        //   addData();
+        addData();
         toast.success("Registered Successfully");
       })
       .catch((error) => console.error(error));
   };
-  // const addData = async () => {
-  //   try {
-  //     const docRef = await addDoc(collection(db, "pixonoids-freshman-2k24"), {
-  //       firstName,
-  //       lastName,
-  //       description,
-  //       email,
-  //       rollNumber,
-  //       branch,
-  //       mobileNumber,
-  //       link,
-  //       department,
-  //       userEmail: user.email,
-  //     });
-  //     console.log("Document written with ID: ", docRef.id);
-  //   } catch (e) {
-  //     console.error("Error adding document: ", e);
-  //   }
-  // };
+  const addData = async () => {
+    try {
+      const docRef = await addDoc(collection(db, "pixonoids-freshman-2k24"), {
+        firstName,
+        lastName,
+        description,
+        email,
+        rollNumber,
+        branch,
+        mobileNumber,
+        link,
+        department,
+        userEmail: user.email,
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
 
   // https://script.google.com/macros/s/AKfycbzq2-G27iFWZDsEykaZvX9yBahoEfmkPOVXswvppTEOy1DOBGuWQgrTnd2jQRb0MJkf/exec --> Google App Script URL for the form submission
   return (
-    <div className="min-h-[80vh] flex justify-center items-center font-sans">
+    <div className="min-h-[80vh] flex justify-center items-center font-sans flex-col">
       <div className="max-w-xl ">
         <h1>Register</h1>
         <form>
@@ -185,10 +193,20 @@ const Register = () => {
             are most interested in and mention the others in the description.
           </span>
           <br />
-          <button type="submit" onClick={RegisterFormSubmit}>
+          <button
+            type="submit"
+            onClick={RegisterFormSubmit}
+            className="btn mt-6"
+          >
             Register
           </button>
         </form>
+      </div>
+      <br />
+      <div className="">
+        <button onClick={signOutUser} className="btn">
+          Sign Out
+        </button>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const RegistredUer = () => {
     <div>
       <div className="mt-11">
         <p className="h3 w-full text-center">Welcome, {user.displayName}</p>
-        <p className="text-n-3 text-xl text-justify">
+        <p className="text-n-3 text-xl text-center">
           You are already registered with the email: {user.email}.
         </p>
         <br />
