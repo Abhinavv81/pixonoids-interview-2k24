@@ -6,6 +6,7 @@ import Home from "./Pages/Home";
 import SignIn from "./Pages/SignIn";
 import Navbar from "./Components/Navbar";
 import Particles from "./Components/Particle";
+import Done from "./Pages/Done";
 function App() {
   const { user, signIn, signOutUser } = useAuth(); // Access authentication state and functions
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/register" element={<SignIn />}></Route>
           <Route path="*" element={<div>Something went wrong</div>}></Route>
+          <Route path="/done" element={<Done />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

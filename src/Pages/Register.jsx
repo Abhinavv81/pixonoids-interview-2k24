@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { useAuth } from "../Context/useAuthContext";
 import { db } from "../firebase";
 import { doc, setDoc, collection, addDoc } from "firebase/firestore";
+import { redirect } from "react-router-dom";
 const Register = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -18,18 +19,6 @@ const Register = () => {
 
   const RegisterFormSubmit = (e) => {
     e.preventDefault();
-
-    const data = {
-      firstName,
-      lastName,
-      description,
-      email,
-      rollNumber,
-      branch,
-      mobileNumber,
-      link,
-      department,
-    };
     if (!user) {
       toast.error("Please Sign In to register");
       return;
