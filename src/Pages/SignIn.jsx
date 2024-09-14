@@ -3,10 +3,11 @@ import { useAuth } from "../Context/useAuthContext";
 import Register from "./Register";
 import { db } from "../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
+import RegistredUer from "./RegistredUer";
 const SignIn = () => {
   const { user, signIn, signOutUser } = useAuth();
   if (user && checkEmail(user.email)) {
-    console.log("User exists");
+    return <RegistredUer />;
   }
 
   if (user) {
