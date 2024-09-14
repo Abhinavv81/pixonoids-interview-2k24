@@ -17,3 +17,6 @@
 body {
   @apply bg-n-8 min-h-screen w-full;
 }
+.form-input {
+  @apply flex-1 border-b-n-3 bg-transparent border-b py-2;
+}
