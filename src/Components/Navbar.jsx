@@ -148,18 +148,18 @@ const Navbar = () => {
               <div className="flex  justify-between gap-15 items-center pt-16 text-[#F8E5CF] -mt-3">
                 <div className="flex flex-col gap-2 text-center">
                   <span className="sm:text-[12px]  lg:text-2xl font-semibold">
-                    RAHUL PRASAD
+                    ANURAG NEGI
                   </span>
                   <span className="sm:text-[12px]  lg:text-2xl">
-                    7807592676
+                    8219132773
                   </span>
                 </div>
                 <div className="flex flex-col gap-2 text-center">
                   <span className=" sm:text-[12px]  lg:text-2xl font-semibold ">
-                    VANI CHAUHAN
+                    TANMAY SHARMA
                   </span>
                   <span className="sm:text-[12px]  lg:text-2xl">
-                    9990054291
+                    8448608491
                   </span>
                 </div>
               </div>
