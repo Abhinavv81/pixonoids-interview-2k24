@@ -2,11 +2,13 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
-import SignIn from "./Pages/SignIn";
 import Navbar from "./Components/Navbar";
-import Particles from "./Components/Particle";
-import Done from "./Pages/Done";
-import Footer from "./Components/Footer";
+import { Suspense } from "react";
+import Loader from "./Components/Loader";
+const SignIn = React.lazy(() => import("./Pages/SignIn"));
+const Done = React.lazy(() => import("./Pages/Done"));
+const Particles = React.lazy(() => import("./Components/Particle"));
+const Footer = React.lazy(() => import("./Components/Footer"));
 function App() {
   return (
     <div className="App max-w-7xl mx-auto pt-4 p-3 ">
@@ -22,10 +24,31 @@ function App() {
           <Navbar />
         </div>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/register" element={<SignIn />}></Route>
+          <Route
+            path="/"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Home />
+              </Suspense>
+            }
+          ></Route>
+          <Route
+            path="/register"
+            element={
+              <Suspense fallback={<Loader />}>
+                <SignIn />
+              </Suspense>
+            }
+          ></Route>
           <Route path="*" element={<div>Something went wrong</div>}></Route>
-          <Route path="/done" element={<Done />}></Route>
+          <Route
+            path="/done"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Done />
+              </Suspense>
+            }
+          ></Route>
         </Routes>
       </BrowserRouter>
       <Footer />

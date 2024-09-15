@@ -36,3 +36,21 @@ body {
     transform: rotate(360deg);
   }
 }
+.loadingspan::after {
+  content: "Loading...";
+  animation: loading 1s infinite;
+}
+@keyframes loading {
+  0% {
+    content: "Loading.";
+  }
+  25% {
+    content: "Loading..";
+  }
+  50% {
+    content: "Loading...";
+  }
+  75% {
+    content: "Loading....";
+  }
+}

@@ -4,6 +4,7 @@ import Register from "./Register";
 import RegistredUer from "./RegistredUer";
 import { db } from "../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
+import Loader from "../Components/Loader";
 const SignIn = () => {
   const { user, signIn, signOutUser } = useAuth();
 
@@ -85,15 +86,7 @@ const UserLoggedIn = () => {
   checkEmail();
 
   if (loading) {
-    return (
-      <>
-        <div className="h-screen w-full flex justify-center items-center">
-          <div className="text-center ">
-            <h1 className="h3">Loading...</h1>
-          </div>
-        </div>
-      </>
-    );
+    return <Loader />;
   } else {
     if (userExists) {
       return <RegistredUer />;

@@ -5,6 +5,7 @@ import { useAuth } from "../Context/useAuthContext";
 import { db } from "../firebase";
 import { doc, setDoc, collection, addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import Loader from "../Components/Loader";
 const Register = () => {
   const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
@@ -17,6 +18,7 @@ const Register = () => {
   const [link, setLink] = useState("");
   const [department, setDepartment] = useState("");
   const { user, signIn, signOutUser } = useAuth();
+  const [submitting, setSubmitting] = useState(false);
 
   const RegisterFormSubmit = (e) => {
     e.preventDefault();
@@ -54,6 +56,7 @@ const Register = () => {
       toast.error("Enter a valid email address");
       return;
     }
+    setSubmitting(true);
 
     fetch(
       "https://script.google.com/macros/s/AKfycbzq2-G27iFWZDsEykaZvX9yBahoEfmkPOVXswvppTEOy1DOBGuWQgrTnd2jQRb0MJkf/exec",
@@ -83,7 +86,10 @@ const Register = () => {
         toast.success("Registered Successfully");
         navigate("/done");
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => {
+        setSubmitting(false);
+      });
   };
   const addData = async () => {
     try {
@@ -106,6 +112,10 @@ const Register = () => {
   };
 
   // https://script.google.com/macros/s/AKfycbzq2-G27iFWZDsEykaZvX9yBahoEfmkPOVXswvppTEOy1DOBGuWQgrTnd2jQRb0MJkf/exec --> Google App Script URL for the form submission
+
+  if (submitting) {
+    return <Loader />;
+  }
   return (
     <div className="min-h-[80vh] flex justify-center items-center font-sans flex-col mt-8">
       <div className="max-w-xl justify-center ">
