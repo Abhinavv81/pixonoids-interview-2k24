@@ -6,7 +6,7 @@ const Home = () => {
     {
       name: "Pre Production",
       description:
-        "Solely responsible for cov- ering and hosting events throughout the college, Regular Photowalks keep their skills sharp and take a fresh breath of nature.Using modern software like Adobe Light- room and Adobe Photoshop, each click is elevated into something beautifully dis- tinct, with an amazing blend of colours and effects.",
+        "Solely responsible for covering and hosting events throughout the college, Regular Photowalks keep their skills sharp and take a fresh breath of nature.Using modern software like Adobe Lightroom and Adobe Photoshop, each click is elevated into something beautifully distinct, with an amazing blend of colours and effects.",
       image: "/g1.jpg",
     },
     {
@@ -24,7 +24,7 @@ const Home = () => {
     {
       name: "Web Development",
       description:
-        "We at Pixonoids - plan, create and code user-friendly and fully functional web applications for the cultural and technical fests. The exe- cution of code is accomplished by using fundamental and advanced concepts of HTML, CSS, Javascript, Node.js and also frame- works such as React.js",
+        "We at Pixonoids plan, create and code userfriendly and fully functional web applications for the cultural and technical fests. The execution of code is accomplished by using fundamental and advanced concepts of HTML, CSS, Javascript, Node.js and also frame- works such as React.js",
       image: "/hillfair.png",
     },
   ];
@@ -55,8 +55,8 @@ const Home = () => {
           />
         </div>
       </div>
-      <section className="text-gray-600 body-font">
-        <div className="container  py-24 ">
+      <section className="w-full body-font">
+        <div className="m-5  py-24 ">
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-n-1">
             What we do ?
           </h1>
@@ -65,7 +65,7 @@ const Home = () => {
           <div className="flex flex-wrap ">
             {dept.map((d, index) => (
               <div className="xl:w-1/4 md:w-1/2 p-1" key={index}>
-                <div className=" py-6 rounded-lg md:px-3">
+                <div className=" py-6 rounded-lg md:pr-6">
                   <img
                     className="h-36 rounded w-full object-cover object-center mb-6"
                     src={d.image}
