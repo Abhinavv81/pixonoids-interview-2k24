@@ -211,7 +211,7 @@ const Register = () => {
                 onChange={(e) => setDepartment(e.target.value)}
               >
                 <option value="pre-production">Pre Production</option>
-                <option value="post-production">Post Production</option>
+                <option value="post-production">Video Editing and Animation</option>
                 <option value="web-d">Web Development</option>
                 <option value="graphics">Graphic Design</option>
               </select>
