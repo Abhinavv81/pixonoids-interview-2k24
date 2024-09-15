@@ -24,7 +24,7 @@ const Home = () => {
     {
       name: "Web Development",
       description:
-        "We at Pixonoids - plan, create and code user-friendly and fully functional web applications for the cultural and technical fests. The exe- cution of code is accom- plished by using fundamen- tal and advanced concepts of HTML, CSS, Javas- cript, Node.js and also frame- works such as React.js",
+        "We at Pixonoids - plan, create and code user-friendly and fully functional web applications for the cultural and technical fests. The exe- cution of code is accomplished by using fundamental and advanced concepts of HTML, CSS, Javascript, Node.js and also frame- works such as React.js",
       image: "/hillfair.png",
     },
   ];
@@ -60,7 +60,7 @@ const Home = () => {
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-n-1">
             What we do ?
           </h1>
-          <div className="h-1 w-20 bg-indigo-500 rounded"></div>
+          <div className="h-1 w-20 bg-color-1 rounded"></div>
 
           <div className="flex flex-wrap ">
             {dept.map((d, index) => (
