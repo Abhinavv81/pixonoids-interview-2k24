@@ -11,27 +11,27 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "GitHub",
-      link: "",
+      link: "https://github.com/pixonoids",
       icon: <Github size={24} />,
     },
     {
       name: "LinkedIn",
-      link: "",
+      link: "https://www.linkedin.com/company/pixonoids/mycompany/",
       icon: <Linkedin size={24} />,
     },
     {
       name: "Instagram",
-      link: "",
+      link: "https://www.instagram.com/pixonoids/",
       icon: <Instagram size={24} />,
     },
     {
       name: "Twitter",
-      link: "",
+      link: "https://x.com/Pixonoids",
       icon: <TwitterIcon size={24} />,
     },
     {
       name: "Youtube",
-      link: "",
+      link: "https://www.youtube.com/@pixonoids",
       icon: <Youtube size={24} />,
     },
   ];
@@ -58,6 +58,7 @@ const SocialLink = ({ href, children }) => {
     <a
       href={href}
       className="  rounded-full hover:bg-color-1 p-2 transition-all"
+      target="_blank"
     >
       {children}
     </a>
