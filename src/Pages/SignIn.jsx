@@ -6,7 +6,7 @@ import { db } from "../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 const SignIn = () => {
   const { user, signIn, signOutUser } = useAuth();
-  return <Register />;
+
   if (user) {
     return <UserLoggedIn />;
   }
