@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,5 +23,16 @@ body {
   @apply flex-1 border-b-n-3 bg-transparent border-b py-2;
 }
 .btn {
-  @apply bg-n-1 text-n-8 text-base lg:text-xl hover:text-color-1 font-bold px-4 py-2 rounded-full transition-all;
+  @apply bg-n-1 text-n-8 text-base lg:text-lg  hover:text-color-1 font-bold px-4 py-2 rounded-full transition-all;
+}
+.logo-animation {
+  animation: spinlogo 6s linear infinite;
+}
+@keyframes spinlogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

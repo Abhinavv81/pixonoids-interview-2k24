@@ -37,6 +37,24 @@ const Register = () => {
       toast.error("Please fill all the fields");
       return;
     }
+    //24bxx0xx -> 8 characters
+    if (rollNumber.length !== 8) {
+      toast.error("Please enter a valid roll number");
+      return;
+    }
+    //10 digit number
+
+    if (mobileNumber.length !== 10) {
+      toast.error("Enter a valid 10 digit mobile number ");
+      return;
+    }
+    // email validation
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Enter a valid email address");
+      return;
+    }
+
     fetch(
       "https://script.google.com/macros/s/AKfycbzq2-G27iFWZDsEykaZvX9yBahoEfmkPOVXswvppTEOy1DOBGuWQgrTnd2jQRb0MJkf/exec",
       {
@@ -94,7 +112,13 @@ const Register = () => {
         <div className="flex justify-center -ml-4 mb-3 text-2xl lg:text-5xl font-advent font-bold">
           REGISTER
         </div>
-        <form>
+        <span className="text-xs text-justify text-n-3 ">
+          Are you driven by curiosity and a passion for fun? Get ready for an
+          exciting journey with Team Pixonoids! Join us to experience a vibrant
+          workplace culture, the power of teamwork, and the chance to contribute
+          to extraordinary projects.
+        </span>
+        <form className="mt-11">
           <div className="flex gap-4 flex-col text-[10px] lg:text-base">
             <div className="flex gap-4">
               <input
@@ -193,11 +217,6 @@ const Register = () => {
         </button>
       </div>
       <br />
-      <div className="">
-        <button onClick={signOutUser} className="btn">
-          Sign Out
-        </button>
-      </div>
     </div>
   );
 };

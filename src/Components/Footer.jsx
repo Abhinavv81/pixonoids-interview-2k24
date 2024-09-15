@@ -58,6 +58,7 @@ const SocialLink = ({ href, children }) => {
     <a
       href={href}
       className="  rounded-full hover:bg-color-1 p-2 transition-all"
+      target="_blank"
     >
       {children}
     </a>
